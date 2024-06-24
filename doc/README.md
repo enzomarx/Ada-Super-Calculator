@@ -25,22 +25,26 @@ To compile and run Ada Super Calculator, you will need:
 - An Ada compiler (e.g., GNAT)
 - A command-line terminal
 
+## Important Note
+
+**Ensure there are no special characters in the directory path where the project is saved.** Special characters can cause issues during compilation.
+
 ## How to Compile
 
-Open a command-line terminal and navigate to the directory where the file `main.adb` is located. Execute the following command to compile the program:
+Open a command-line terminal and navigate to the directory where the file `super_calculator.adb` is located. Execute the following command to compile the program:
 
 ```sh
-gnatmake src/main.adb
+gnatmake src/super_calculator.adb
 ```
 
-This will generate an executable named `main`.
+This will generate an executable named `super_calculator`.
 
 ## How to Run
 
 After compiling, you can run the program with the following command in the terminal:
 
 ```sh
-./main
+./super_calculator
 ```
 
 ## Usage
@@ -95,4 +99,3 @@ This project is distributed under the MIT License. See the `LICENSE` file for mo
 ---
 
 We hope you find Ada Super Calculator useful and easy to use. If you have any feedback or encounter issues, please open an issue in the repository.
-```
