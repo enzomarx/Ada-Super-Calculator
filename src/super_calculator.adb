@@ -11,20 +11,7 @@ procedure Super_Calculator is
     -- Function to print a float without scientific notation
     procedure Print_Float(Number : Float) is
     begin
-        if Number = 0.0 then
-            Put("0");
-        else
-            declare
-                Int_Part : Integer := Integer(Number);
-                Frac_Part : Float  := Number - Float(Int_Part);
-            begin
-                Put(Int_Part'Image & ".");
-                if Frac_Part < 0.0 then
-                    Frac_Part := -Frac_Part;
-                end if;
-                Put(Fixed(Fraction_Part => Frac_Part, Fore => 0, Aft => 5, Exp => 0));
-            end;
-        end if;
+        Ada.Float_Text_IO.Put(Item => Number, Fore => 0, Aft => 5, Exp => 0);
     end Print_Float;
 
 begin
