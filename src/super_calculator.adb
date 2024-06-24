@@ -8,6 +8,25 @@ procedure Super_Calculator is
     A, B, C, Result : Float;
     Choice          : Integer;
 
+    -- Function to print a float without scientific notation
+    procedure Print_Float(Number : Float) is
+    begin
+        if Number = 0.0 then
+            Put("0");
+        else
+            declare
+                Int_Part : Integer := Integer(Number);
+                Frac_Part : Float  := Number - Float(Int_Part);
+            begin
+                Put(Int_Part'Image & ".");
+                if Frac_Part < 0.0 then
+                    Frac_Part := -Frac_Part;
+                end if;
+                Put(Fixed(Fraction_Part => Frac_Part, Fore => 0, Aft => 5, Exp => 0));
+            end;
+        end if;
+    end Print_Float;
+
 begin
     loop
         -- Display the menu
@@ -32,40 +51,50 @@ begin
                 Put("Enter the second number: ");
                 Get(B);
                 Result := Calculator_Operations.Add(A, B);
-                Put_Line("Result: " & Float'Image(Result));
+                Put("Result: ");
+                Print_Float(Result);
+                New_Line;
             when 2 =>
                 Put("Enter the first number: ");
                 Get(A);
                 Put("Enter the second number: ");
                 Get(B);
                 Result := Calculator_Operations.Subtract(A, B);
-                Put_Line("Result: " & Float'Image(Result));
+                Put("Result: ");
+                Print_Float(Result);
+                New_Line;
             when 3 =>
                 Put("Enter the first number: ");
                 Get(A);
                 Put("Enter the second number: ");
                 Get(B);
                 Result := Calculator_Operations.Multiply(A, B);
-                Put_Line("Result: " & Float'Image(Result));
+                Put("Result: ");
+                Print_Float(Result);
+                New_Line;
             when 4 =>
                 Put("Enter the first number: ");
                 Get(A);
                 Put("Enter the second number: ");
                 Get(B);
                 Result := Calculator_Operations.Divide(A, B);
-                Put_Line("Result: " & Float'Image(Result));
+                Put("Result: ");
+                Print_Float(Result);
+                New_Line;
             when 5 =>
                 Put("Enter the base number: ");
                 Get(A);
                 Put("Enter the exponent: ");
                 Get(B);
                 Result := Calculator_Operations.Power(A, B);
-                Put_Line("Result: " & Float'Image(Result));
+                Put_Line("Result: " & Float'Image(Result)); -- Scientific notation is fine here
             when 6 =>
                 Put("Enter the number: ");
                 Get(A);
                 Result := Calculator_Operations.Square_Root(A);
-                Put_Line("Result: " & Float'Image(Result));
+                Put("Result: ");
+                Print_Float(Result);
+                New_Line;
             when 7 =>
                 Put("Enter the first value (A): ");
                 Get(A);
@@ -74,14 +103,18 @@ begin
                 Put("Enter the third value (C): ");
                 Get(C);
                 Result := Calculator_Operations.Simple_Rule_of_Three(A, B, C);
-                Put_Line("Result: " & Float'Image(Result));
+                Put("Result: ");
+                Print_Float(Result);
+                New_Line;
             when 8 =>
                 Put("Enter the coefficient A: ");
                 Get(A);
                 Put("Enter the coefficient B: ");
                 Get(B);
                 Result := Calculator_Operations.First_Degree_Equation(A, B);
-                Put_Line("Result: x = " & Float'Image(Result));
+                Put("Result: x = ");
+                Print_Float(Result);
+                New_Line;
             when 9 =>
                 Put_Line("Exiting the calculator.");
                 exit;
