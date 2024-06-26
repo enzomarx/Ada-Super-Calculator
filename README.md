@@ -1,4 +1,4 @@
-# Ada Super Calculator 1
+# Ada Super Calculator 
 
 Ada Super Calculator is a powerful and versatile calculator written in Ada, offering various common mathematical operations, including addition, subtraction, multiplication, division, exponentiation, square root, simple rule of three, and solving first-degree equations. This application is designed for use in a console environment.
 
