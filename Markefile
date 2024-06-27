@@ -1,0 +1,19 @@
+# Makefile
+ADA_SRC = src/calculator_operations.adb
+ADA_LIB = lib/libcalculator.so
+INCLUDE_DIR = include
+CXX_SRC = calculator_interface.cpp
+CXX_BIN = calculator_interface
+
+all: $(CXX_BIN)
+
+$(ADA_LIB): $(ADA_SRC)
+    gnatmake -fPIC -shared -o $(ADA_LIB) $(ADA_SRC)
+
+$(CXX_BIN): $(CXX_SRC) $(ADA_LIB)
+    g++ -o $(CXX_BIN) $(CXX_SRC) -Llib -lcalculator -I$(INCLUDE_DIR) -ldl
+
+clean:
+    rm -f $(CXX_BIN) $(ADA_LIB) src/*.o src/*.ali
+
+.PHONY: all clean
