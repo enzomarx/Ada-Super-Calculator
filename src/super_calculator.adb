@@ -4,11 +4,11 @@ with Ada.Float_Text_IO;   use Ada.Float_Text_IO;
 with Calculator_Operations;
 
 procedure Super_Calculator is
-    -- Variables to hold user input
+    -- Var to hold user input
     A, B, C, Result : Float;
     Choice          : Integer;
 
-    -- Function to print a float without scientific notation
+    -- Func to print a float without <<scientific notation>>
     procedure Print_Float(Number : Float) is
     begin
         Ada.Float_Text_IO.Put(Item => Number, Fore => 0, Aft => 5, Exp => 0);
