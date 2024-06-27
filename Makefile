@@ -1,29 +1,23 @@
-# Makefile para compilar a biblioteca Ada e a interface C++
-
-# Caminhos dos arquivos
 ADA_SRCS = src/calculator_operations.adb
 CXX_SRCS = calculator_interface.cpp
 LIB_DIR = lib
 INCLUDE_DIR = include
 
-# Nome da biblioteca
 LIB_NAME = libcalculator.so
 
-# Flags do compilador
 ADAFLAGS = -fPIC -shared
 CXXFLAGS = -L$(LIB_DIR) -I$(INCLUDE_DIR) -ldl
 
-# Alvo padrão
+# Standard Target
 all: $(LIB_DIR)/$(LIB_NAME) calculator_interface
 
-# Compila a biblioteca Ada
 $(LIB_DIR)/$(LIB_NAME): $(ADA_SRCS)
 	gnatmake $(ADAFLAGS) -o $@ $^
 
-# Compila a interface C++
+# Com inter C++
 calculator_interface: $(CXX_SRCS)
 	g++ -o $@ $^ $(CXXFLAGS)
 
-# Limpa os arquivos compilados
+
 clean:
 	rm -f $(LIB_DIR)/$(LIB_NAME) calculator_interface
