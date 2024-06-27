@@ -1,4 +1,5 @@
 // include/calculator_operations.h
+
 #ifndef CALCULATOR_OPERATIONS_H
 #define CALCULATOR_OPERATIONS_H
 
@@ -6,6 +7,7 @@
 extern "C" {
 #endif
 
+// Declarações das funções
 float Add(float A, float B);
 float Subtract(float A, float B);
 float Multiply(float A, float B);
