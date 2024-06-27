@@ -110,3 +110,4 @@ begin
         end case;
     end loop;
 end Super_Calculator;
+    
