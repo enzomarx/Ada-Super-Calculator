@@ -11,7 +11,7 @@ LIB_NAME = libcalculator.so
 
 # Flags do compilador
 ADAFLAGS = -fPIC -shared
-CXXFLAGS = -L$(LIB_DIR) -I$(SRC_DIR) -ldl
+CXXFLAGS = -L$(LIB_DIR) -I$(SRC_DIR)
 
 # Alvo padrão
 all: $(LIB_DIR)/$(LIB_NAME) calculator_interface
