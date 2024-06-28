@@ -11,7 +11,13 @@ LIB_NAME = libcalculator.so
 
 # Flags do compilador
 ADAFLAGS = -fPIC -shared
-CXXFLAGS = -L$(LIB_DIR) -I$(SRC_DIR)
+
+# Detecta o sistema operacional
+ifeq ($(OS),Windows_NT)
+	CXXFLAGS = -L$(LIB_DIR) -I$(SRC_DIR)
+else
+	CXXFLAGS = -L$(LIB_DIR) -I$(SRC_DIR) -ldl
+endif
 
 # Alvo padrão
 all: $(LIB_DIR)/$(LIB_NAME) calculator_interface

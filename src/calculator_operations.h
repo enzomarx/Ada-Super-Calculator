@@ -1,5 +1,3 @@
-// src/calculator_operations.h
-
 #ifndef CALCULATOR_OPERATIONS_H
 #define CALCULATOR_OPERATIONS_H
 
