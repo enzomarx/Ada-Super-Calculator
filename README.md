@@ -31,20 +31,20 @@ To compile and run Ada Super Calculator, you will need:
 
 ## How to Compile
 
-Open a command-line terminal and navigate to the directory where the file `super_calculator.adb` is located. Execute the following command to compile the program:
+Open a command-line terminal and navigate to the directory where the file `super_calculator_cli.adb` is located. Execute the following command to compile the program:
 
 ```sh
-gnatmake src/super_calculator.adb
+gnatmake super_calculator_cli.adb -o start
 ```
 
-This will generate an executable named `super_calculator`.
+This will generate an executable named `start`.
 
 ## How to Run
 
 After compiling, you can run the program with the following command in the terminal:
 
 ```sh
-./super_calculator
+./start
 ```
 
 ## Usage
@@ -55,27 +55,41 @@ The program displays a menu with various mathematical operation options. The use
 
 1. The user runs the program.
 2. The program displays the menu:
+
    ```
-   Super Calculator
-   1. Addition
-   2. Subtraction
-   3. Multiplication
-   4. Division
-   5. Exponentiation
-   6. Square Root
-   7. Simple Rule of Three
-   8. First-Degree Equation
-   9. Exit
+   ========================================
+   |            SUPER CALCULATOR          |
+   ========================================
+   | 1. Addition                          |
+   | 2. Subtraction                       |
+   | 3. Multiplication                    |
+   | 4. Division                          |
+   | 5. Exponentiation                    |
+   | 6. Square Root                       |
+   | 7. Simple Rule of Three              |
+   | 8. First Degree Equation             |
+   | 9. Exit                              |
+   ========================================
    Enter your choice:
    ```
-3. The user selects the desired operation, for example, 1 for addition.
+
+3. The user selects the desired operation, for example, `1` for addition.
 4. The program prompts for the numbers to be added:
+
    ```
    Enter the first number: 5
    Enter the second number: 3
-   Result: 8.0
    ```
-5. The menu is displayed again until the user chooses the option to exit (9).
+
+5. The program displays the result:
+
+   ```
+   ========================================
+   |           Result: 8.00000             |
+   ========================================
+   ```
+
+6. The menu is displayed again until the user chooses the option to exit (`9`).
 
 ## Errors and Exceptions
 
