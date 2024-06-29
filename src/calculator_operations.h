@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-// Declarações das funções
+// Declaração das funções exportadas de Ada
 float Add(float A, float B);
 float Subtract(float A, float B);
 float Multiply(float A, float B);
